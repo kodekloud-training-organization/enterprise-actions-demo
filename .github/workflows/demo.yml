@@ -15,5 +15,9 @@ jobs:
       - name: External Call using cURL
         run: curl -v http://httpbin.org/ip
 
-      - name: External call with INVALID Proxy credentials
-        run: curl -v -x http://kk-proxy-user-123:kk-proxy-password-123@localhost:3128 http://httpbin.org/ip
+      - name: Verify Proxy Settings
+        run: |
+          echo "HTTPS Proxy: $https_proxy"
+          echo "HTTP Proxy: $http_proxy"
+          echo "No Proxy: $no_proxy"
+          curl -v https://httpbin.org/ip

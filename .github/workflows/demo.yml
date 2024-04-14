@@ -5,8 +5,8 @@ on:
     push:
 
 jobs:
-  demo_job: 
-    runs-on: Default Enterprise Runner Group
+  demo_job:
+    runs-on: self-hosted
     steps:
       - name: Hello
         run: |
